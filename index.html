@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--jquery lib-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        //jquery loads
+        $(document).ready(function(){
+                $("#div1").load("./calculators/std.html");
+        });
+        </script>
+        <script>
+        $(document).ready(function(){
+                $("#div2").load("./calculators/sci.html");
+        });
+        </script>
+        
+        <meta charset="utf-8">
+        <!--external style sheet-->
+        <link rel="stylesheet" href="form.css" type="text/css">
+        
+        <title>uCalc</title>
+    </head>
+    
+    <body bgcolor="0000FF">
+        <center><br>
+        <!--main prompt-->
+        <h1><B><font color="white" stlye= "Font-size:70"> Javascript Calculator </font></h1></B>
+        <hr size=20 color="black">
+        </center>
+        <!--tab definition-->
+        <u1 class="tab">
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openCalc(event, 'Standard')">Standard</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openCalc(event, 'Scientific')">Scientific</a></li>
+        </u1>
+        
+        <!--include calculators from seperate files-->
+        <div id="div1"></div>
+        <!--<div id="div2"></div>-->
+        
+        <br><br>
+        <hr size=20 color="black">
+        
+        <script>
+        //tab handler
+        function openCalc(evt, calc) 
+        {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) 
+            {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) 
+            {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(calc).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+         
+        //"math" operations
+        function add()
+        {
+            document.Calculator.display.value +="+";
+            document.Calculator.display.style.TextAlign="right";
+        }
+        function diff()
+        {
+            document.Calculator.display.value +="-";
+            document.Calculator.display.style.TextAlign="right";
+        }
+        function mult()
+        {
+            document.Calculator.display.value +="*";
+            document.Calculator.display.style.TextAlign="right";
+        }
+        function div()
+        {
+            document.Calculator.display.value +="/";
+            document.Calculator.display.style.TextAlign="right";
+        }
+        function perc()
+        {
+            document.Calculator.display.value +="%";
+            document.Calculator.display.style.TextAlign="right";
+        }
+        function btnclear()
+        {
+            document.Calculator.display.value ="";
+            document.Calculator.display.style.TextAlign="right";
+        }
+        function clr_entry()
+        {
+            /*clear to empty or operator*/
+        }
+        function dot()
+        {
+            document.Calculator.display.value +=".";
+            document.Calculator.display.style.TextAlign="right";
+        }
+        function square()
+        {
+            document.Calculator.display.value *= document.Calculator.display.value;
+        }
+        function recip()
+        {
+            document.Calculator.display.value = 1/document.Calculator.display.value;
+        }
+        function rad()
+        {
+            document.Calculator.display.value = Math.sqrt(document.Calculator.display.value);
+        }
+        
+        </script>
+        
+    </body>
+</html>
+
