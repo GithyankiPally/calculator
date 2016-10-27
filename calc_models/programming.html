@@ -1,0 +1,100 @@
+<!--Programming Calculator-->
+<script>
+function dropDownFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+
+
+
+<div id="Programming" class="tabcontent">
+    <center>
+        
+    <form name="Calculator">
+        <br>
+        <br>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Decimal</a>
+            <a href="#">Hexadecimal</a>
+            <a href="#">Octal</a>
+          </div>
+        </div>
+        <br>
+        <br>
+        <input name="display" placeholder="0" style="width:200px; text-align:right; border-radius:8px"/>
+    </form> 
+    
+    <br>
+    <button type="button" class="button" onClick="recip()">1&frasl;<sub>x</sub></button>
+    <br>
+    <button type="button" class="button" onClick="clr_entry()">CE</button>
+    <button type="button" class="button" onClick="btnclear()">C</button>
+    <button type="button" class="button" onClick="backspace()">&#x21D0</button>
+    <button type="button" class="button" onClick="div()">/</button>
+    <br>
+    <button type="button" class="button">&#60 &#60</button>
+    <button type="button" class="button button2">NOT</button>
+    <button type="button" class="button" style="visibility:hidden">D</button>
+    <button type="button" class="button" style="visibility:hidden">E</button>
+    <button type="button" class="button" style="visibility:hidden">F</button>
+    <br>
+    <button type="button" class="button">&#62 &#62</button>
+    <button type="button" class="button">AND</button>
+    <button type="button" class="button" style="visibility:hidden">A</button>
+    <button type="button" class="button" style="visibility:hidden">B</button>
+    <button type="button" class="button" style="visibility:hidden">C</button>
+    <br>
+    <button type="button" class="button">A &#60 &#60 B</button>
+    <button type="button" class="button">NAND</button>
+    <button type="button" class="button button2" onClick="document.Calculator.display.value +='7'">7</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value +='8'">8</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value +='9'">9</button>
+    <button type="button" class="button" onClick="mult()">*</button>
+    <br>
+    <button type="button" class="button">A &#62 &#62 B</button>
+    <button type="button" class="button">NOR</button>
+    <button type="button" class="button button2" onClick="document.Calculator.display.value +='4'">4</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value +='5'">5</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value +='6'">6</button>
+    <button type="button" class="button" onClick="diff()">-</button>
+    <br>
+    <button type="button" class="button">XOR</button>
+    <button type="button" class="button button2" onClick="document.Calculator.display.value +='1'">1</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value +='2'">2</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value +='3'">3</button>
+    <button type="button" class="button" onClick="add()">+</button>
+    <br>
+    <button type="button" class="button" onClick="flip()">&plusmn</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value +='0'">0</button>
+    <button type="button" class="button" onClick="dot()">.</button>
+    <button type="button" class="button" onClick="document.Calculator.display.value = eval(document.Calculator.display.value)">=</button>
+    <br>
+    
+    </center>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
